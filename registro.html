@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro - GeoMiner</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Questrial&display=swap" rel="stylesheet">
+</head>
+<body class="auth-page">
+    <div class="auth-container">
+        <!-- Left Side - Image -->
+        <div class="auth-image">
+            <img src="../images/minero_casco.jpg" alt="Mineros en túnel">
+        </div>
+
+        <!-- Right Side - Form -->
+        <div class="auth-form-container">
+            <!-- Botón de retroceso -->
+            <a href="index.html" class="back-button" title="Volver a inicio">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M19 12H5M12 19l-7-7 7-7"/>
+                </svg>
+                Volver
+            </a>
+            
+            <div class="auth-logo">
+                <img src="../images/logo_negro.png" alt="GeoMiner Logo">
+                <span>GEOMINER</span>
+            </div>
+
+            <div class="auth-form">
+                <h2>Simplificando procesos mineros, mejorando tecnologias</h2>
+
+                <form id="registroForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nombres">Nombres</label>
+                            <input type="text" id="nombres" name="nombres" placeholder="Ingrese sus nombres" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="apellidos">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" placeholder="Ingrese sus apellidos" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="rut">Rol</label>
+                            <input type="text" id="rut" name="rut" placeholder="Ingrese su rol" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="telefono">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="segmento">Segmento</label>
+                        <select id="segmento" name="segmento" required>
+                            <option value="">Seleccione un segmento</option>
+                            <option value="minera">Empresa Minera</option>
+                            <option value="consultora">Consultora</option>
+                            <option value="independiente">Independiente</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="empresa">Empresa</label>
+                        <input type="text" id="empresa" name="empresa" placeholder="Ingrese el nombre de su empresa" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="correo">Correo Institucional</label>
+                        <input type="email" id="correo" name="correo" placeholder="Ingrese su correo institucional" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contrasena">Contraseña</label>
+                        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required>
+                    </div>
+
+                    <button type="submit" class="auth-submit-btn">Registrarse</button>
+                </form>
+
+                <p class="auth-footer-text">¿Ya tienes una cuenta? <a href="login.html">Inicia Sesión</a></p>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/script.js"></script>
+</body>
+</html>
