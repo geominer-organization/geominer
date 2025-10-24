@@ -35,6 +35,10 @@ body {
 /* ===================================
    NAVBAR
    =================================== */
+.search-btn {
+    display: none;
+}
+
 .navbar {
     background-color: var(--primary-orange);
     padding: 1rem 0;
