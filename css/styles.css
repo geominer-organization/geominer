@@ -350,12 +350,13 @@ body {
 }
 
 .news-main img {
-    height: 400px;
+    height: 520px;
     width: auto;
 
     position: relative;
     left: 50%;
     transform: translateX(-50%);
+    display: block;
 }
 
 .news-main-content {
