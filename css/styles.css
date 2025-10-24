@@ -35,9 +35,7 @@ body {
 /* ===================================
    NAVBAR
    =================================== */
-.search-btn {
-    display: none;
-}
+
 
 .navbar {
     background-color: var(--primary-orange);
