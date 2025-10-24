@@ -911,11 +911,16 @@ body {
 
     /* News Section */
     .news-container {
-        grid-template-columns: 1fr;
+     grid-template-columns: 1fr;
     }
 
     .news-main img {
-        height: 300px;
+        width: 100%;        
+        height: auto;
+        
+        position: static;
+        left: auto;
+        transform: none;
     }
 
     /* Contact Page */
