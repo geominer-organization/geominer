@@ -159,7 +159,7 @@ if (contactForm) {
     });
 }
 
-// Form Validation
+// Form Validation.
 const registroForm = document.getElementById('registroForm');
 
 if (registroForm) {
