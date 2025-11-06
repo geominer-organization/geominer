@@ -1,6 +1,4 @@
-// ===================================
-// NAVBAR FUNCTIONALITY
-// ===================================
+//  Navbar
 document.addEventListener('DOMContentLoaded', function() {
     // Hamburger menu
     const hamburger = document.getElementById('hamburger');
@@ -78,9 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ===================================
-// HERO CAROUSEL
-// ===================================
+// Hero Carousel
 const dots = document.querySelectorAll('.dot');
 const slides = document.querySelectorAll('.hero-slide');
 let currentSlide = 0;
