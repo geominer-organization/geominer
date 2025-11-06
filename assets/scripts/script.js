@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Hero Carousel
+// Hero Carousel.
 const dots = document.querySelectorAll('.dot');
 const slides = document.querySelectorAll('.hero-slide');
 let currentSlide = 0;
