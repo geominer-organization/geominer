@@ -159,9 +159,7 @@ if (contactForm) {
     });
 }
 
-// ===================================
-// FORM VALIDATION - REGISTRO
-// ===================================
+// Form Validation
 const registroForm = document.getElementById('registroForm');
 
 if (registroForm) {
