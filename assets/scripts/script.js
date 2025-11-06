@@ -296,7 +296,7 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observe elements for animation
+// Observe elements for animation.
 document.querySelectorAll('.about-card, .mission-card, .vision-card, .news-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
