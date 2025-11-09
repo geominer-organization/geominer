@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Hero Carousel.
+// Hero Carousel
 const dots = document.querySelectorAll('.dot');
 const slides = document.querySelectorAll('.hero-slide');
 let currentSlide = 0;
@@ -119,9 +119,9 @@ if (dots.length > 0 && slides.length > 0) {
     }, 5000);
 }
 
-// ===================================
+// ==================================
 // FORM VALIDATION - CONTACT FORM
-// ===================================
+// ==================================
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
