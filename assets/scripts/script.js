@@ -119,9 +119,9 @@ if (dots.length > 0 && slides.length > 0) {
     }, 5000);
 }
 
-// ==================================
+// =================================
 // FORM VALIDATION - CONTACT FORM
-// ==================================
+// =================================
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
