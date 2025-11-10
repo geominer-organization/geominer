@@ -1,6 +1,4 @@
-// ===================================
-// NAVBAR FUNCTIONALITY
-// ===================================
+//  Navbar
 document.addEventListener('DOMContentLoaded', function() {
     // Hamburger menu
     const hamburger = document.getElementById('hamburger');
@@ -78,9 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ===================================
-// HERO CAROUSEL
-// ===================================
+// Hero Carousel
 const dots = document.querySelectorAll('.dot');
 const slides = document.querySelectorAll('.hero-slide');
 let currentSlide = 0;
@@ -123,9 +119,9 @@ if (dots.length > 0 && slides.length > 0) {
     }, 5000);
 }
 
-// ===================================
+// =================================
 // FORM VALIDATION - CONTACT FORM
-// ===================================
+// =================================
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
@@ -163,9 +159,7 @@ if (contactForm) {
     });
 }
 
-// ===================================
-// FORM VALIDATION - REGISTRO
-// ===================================
+// Form Validation.
 const registroForm = document.getElementById('registroForm');
 
 if (registroForm) {
@@ -302,7 +296,7 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observe elements for animation
+// Observe elements for animation.
 document.querySelectorAll('.about-card, .mission-card, .vision-card, .news-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
