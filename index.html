@@ -4,145 +4,82 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GeoMiner - Inteligencia geológica para una minería responsable</title>
-    <link rel="stylesheet" href="/geominer/css/styles.css">
+    <link rel="icon" href="/geominer/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/geominer/assets/styles/styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Questrial&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="/geominer/images/logo_negro.png" alt="GeoMiner Logo">
-                <span>GEOMINER</span>
-            </div>
-            
-            <!-- Hamburger Menu Button -->
-            <button class="hamburger" id="hamburger" aria-label="Menú">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="active">Nosotros</a></li>
-                <li><a href="#noticias">Noticias</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="#footer">Enlaces</a></li>
-                <li><a href="login.html">Iniciar Sesión</a></li>
-            </ul>
-            
-        </div>
-    </nav>
+    <div id="navbar-placeholder"></div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <!-- Slide 1 -->
-        <div class="hero-slide active">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Inteligencia geológica para una minería responsable</h1>
-                    <p>Optimice sus procesos de exploración con herramientas que permitan la gestión eficiente de mapas geológicos, fomentando la sostenibilidad.</p>
-                    <button class="cta-button" onclick="window.location.href='registro.html'">Registrarse</button>
-                </div>
-                <div class="hero-image">
-                    <img src="/geominer/images/tractor_solo.jpg" alt="Minería responsable">
+    <main>
+        <section class="hero">
+            <div class="hero-slide active">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Inteligencia geológica para una minería responsable</h1>
+                        <p>Optimice sus procesos de exploración con herramientas que permitan la gestión eficiente de mapas geológicos, fomentando la sostenibilidad.</p>
+                        <button class="cta-button" onclick="window.location.href='contacto.html'">Contáctanos</button>
+                    </div>
+                    <div class="hero-image">
+                        <img src="/geominer/assets/images/tractor_solo.jpg" alt="Minería responsable">
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!-- Slide 2 -->
-        <div class="hero-slide">
-            <div class="hero-content">
-                <div class="hero-text">
-                    <h1>Tecnología geológica para una minería sostenible</h1>
-                    <p>Centralice, interprete y gestione datos para reducir costos y minimizar impactos ambientales.</p>
-                    <button class="cta-button" onclick="window.location.href='registro.html'">Registrarse</button>
-                </div>
-                <div class="hero-image">
-                    <img src="/geominer/images/mineros_en_cueva.jpg" alt="Minería sostenible">
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Conoce GeoMiner en Acción</h1>
+                        <p>Descubre cómo nuestra plataforma transforma datos geológicos en decisiones estratégicas clave.</p>
+                        <button class="cta-button" onclick="window.location.href='contacto.html'">Contáctanos</button>
+                    </div>
+                    <div class="hero-image">
+                        <iframe 
+                            src="https://youtu.be/H532TvjZG5A" 
+                            title="Video sobre el producto GeoMiner" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="carousel-dots">
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-        </div>
-    </section>
+            <div class="hero-slide">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1>Tecnología geológica para una minería sostenible</h1>
+                        <p>Centralice, interprete y gestione datos para reducir costos y minimizar impactos ambientales.</p>
+                        <button class="cta-button" onclick="window.location.href='contacto.html'">Contáctanos</button>
+                    </div>
+                    <div class="hero-image">
+                        <img src="/geominer/assets/images/mineros_en_cueva.jpg" alt="Minería sostenible">
+                    </div>
+                </div>
+            </div>
 
-    <!-- About Section -->
-    <section class="about">
-        <div class="about-container">
-            <div class="about-card">
-                <h2>¿Quiénes somos?</h2>
-                <p>Somos una plataforma de exploración geológica inteligente que utiliza tecnologías de vanguardia para apoyar a empresas mineras en la toma de decisiones informadas. Nuestros mapas interactivos, los cuales integran datos geológicos, geofísicos, geoquímicos, permiten la identificación de áreas de interés de manera eficiente y responsable con el medio ambiente.</p>
+            <div class="carousel-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
             </div>
-            
-            <div class="mission-vision">
-                <div class="mission-card">
-                    <h3>Misión</h3>
-                    <p>Potenciar las actividades de exploración y explotación en la industria minera mediante el desarrollo de soluciones tecnológicas innovadoras que optimicen la gestión de la información geoespacial y ambiental, permitiendo decisiones estratégicas con mayor agilidad y precisión.</p>
-                </div>
-                
-                <div class="vision-card">
-                    <h3>Visión</h3>
-                    <p>Convertirnos en una empresa líder tecnológica que contribuye a la exploración minera responsable y eficiente, facilitando decisiones informadas y sostenibles para los proyectos mineros a nivel global, así como optimizar la industria minera mediante soluciones innovadoras.</p>
-                </div>
-            </div>
-            
-            <div class="about-image">
-                <img src="/geominer/images/vagones.jpg" alt="Mineros trabajando">
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- News Section -->
-    <section class="news" id="noticias">
-        <div class="news-header">
-            <div class="star-icon">⭐</div>
-            <h2>Noticias</h2>
-        </div>
-        
-        <div class="news-container">
-            <div class="news-main">
-                <img src="/geominer/images/tractores_plural.jpg" alt="Noticias principales">
-                <div class="news-main-content">
-                    <p>Perú experimentó 37% de crecimiento en producción de cobre: desempeño en Q3 2025</p>
-                    <button class="news-button orange">Geología</button>
-                </div>
-            </div>
-            
-            <div class="news-sidebar">
-                <div class="news-item">
-                    <p>Implementación nueva de módulos emergente de faralles: Logrando un exploración de minerales más eficiente</p>
-                    <button class="news-button yellow">Tecnología</button>
-                    <span class="news-date">Hace 2 días</span>
-                </div>
-                
-                <div class="news-item">
-                    <p>Avanzan nuevas certificaciones aprobadas ISO 14001 para colaboración integral de servicios</p>
-                    <button class="news-button brown">Sostenibilidad</button>
-                    <span class="news-date">Hace 10 días</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="footer" id="footer">
         <div class="footer-container">
             <div class="footer-brand">
                 <div class="logo">
-                    <img src="/geominer/images/logo_negro.png" alt="GeoMiner Logo">
+                    <img src="/geominer/assets/images/logo_negro.png" alt="GeoMiner Logo">
                     <span>GEOMINER</span>
                 </div>
             </div>
             
             <div class="footer-social">
-                <a href="#" class="social-icon email"><img src="/geominer/images/gmail.png" alt="Email" class="social-img"></a>
-                <a href="#" class="social-icon facebook"><img src="/geominer/images/facebook.png" alt="Facebook" class="social-img"></a>
-                <a href="#" class="social-icon instagram"><img src="/geominer/images/instagram.png" alt="Instagram" class="social-img"></a>
-                <a href="#" class="social-icon linkedin"><img src="/geominer/images/linkedin.png" alt="LinkedIn" class="social-img"></a>
+                <a href="#" class="social-icon email"><img src="/geominer/assets/images/gmail.png" alt="Email" class="social-img"></a>
+                <a href="#" class="social-icon facebook"><img src="/geominer/assets/images/facebook.png" alt="Facebook" class="social-img"></a>
+                <a href="#" class="social-icon instagram"><img src="/geominer/assets/images/instagram.png" alt="Instagram" class="social-img"></a>
+                <a href="#" class="social-icon linkedin"><img src="/geominer/assets/images/linkedin.png" alt="LinkedIn" class="social-img"></a>
             </div>
         </div>
         
@@ -151,6 +88,6 @@
         </div>
     </footer>
 
-    <script src="/geominer/js/script.js"></script>
+    <script src="/geominer/assets/scripts/script.js"></script>
 </body>
 </html>

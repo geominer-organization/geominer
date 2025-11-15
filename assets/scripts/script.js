@@ -1,71 +1,78 @@
 // ===================================
-// NAVBAR FUNCTIONALITY
+// NAVBAR LOADER & ACTIVE LINK
 // ===================================
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
     
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-        
-        // Cerrar menú al hacer click en un enlace
-        const navLinks = document.querySelectorAll('.nav-menu a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-        
-        // Cerrar menú al hacer click fuera
-        document.addEventListener('click', function(event) {
-            const isClickInsideNav = navMenu.contains(event.target);
-            const isClickOnHamburger = hamburger.contains(event.target);
-            
-            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
+    // Cargar el Navbar
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            const navbarPlaceholder = document.getElementById('navbar-placeholder');
+            if (navbarPlaceholder) {
+                navbarPlaceholder.innerHTML = data;
             }
-        });
-    }
-    
-    // Active link highlighting
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        
-        // Si el href coincide con la página actual
-        if (href === currentPage) {
-            link.classList.add('active');
-        } else if (href === 'index.html' && currentPage === '') {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-        
-        // Listener para anclas (como #noticias, #footer)
-        if (href.startsWith('#')) {
-            link.addEventListener('click', function() {
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
+
+            // --- Una vez cargado el navbar, ejecutamos su funcionalidad ---
+            
+            // Hamburger menu
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Cerrar menú al hacer click en un enlace
+                const navLinks = document.querySelectorAll('.nav-menu a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+                
+                // Cerrar menú al hacer click fuera
+                document.addEventListener('click', function(event) {
+                    const isClickInsideNav = navMenu.contains(event.target);
+                    const isClickOnHamburger = hamburger.contains(event.target);
+                    
+                    if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Active link highlighting
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                
+                if (href === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
             });
-        }
-    });
-    
-    // Detectar scroll para activar "Noticias" cuando se ve la sección
+
+        })
+        .catch(error => {
+            console.error('Error cargando el navbar:', error);
+        });
+
+    // Detectar scroll para activar "Noticias" (si estamos en la página de noticias)
     const noticiasSection = document.querySelector('#noticias');
-    if (noticiasSection) {
+    if (noticiasSection && (window.location.pathname.includes('noticias.html') || window.location.pathname.includes('index.html'))) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    const navLinks = document.querySelectorAll('.nav-menu a');
                     navLinks.forEach(link => {
-                        if (link.getAttribute('href') === '#noticias') {
+                        if (link.getAttribute('href') === 'noticias.html') {
                             navLinks.forEach(l => l.classList.remove('active'));
                             link.classList.add('active');
                         }
