@@ -207,8 +207,7 @@ body {
     transform: translateY(-2px);
 }
 
-.hero-image img,
-.hero-image iframe {
+.hero-image img {
     width: 100%;
     height: 400px;
     object-fit: cover;
@@ -1271,108 +1270,5 @@ body {
     .back-button svg {
         width: 16px;
         height: 16px;
-    }
-}
-
-
-/* ===================================
-   FULL HEIGHT LAYOUT (AÑADIR)
-   =================================== */
-
-/* Hacemos que el body sea un contenedor flex vertical
-   y que mida al menos el 100% de la altura de la ventana */
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-/* Hacemos que el contenido principal (lo que está entre el navbar y el footer)
-   crezca para ocupar el espacio disponible */
-main {
-    flex-grow: 1;
-}
-
-
-/* ===================================
-   SERVICES PAGE (AÑADIR)
-   =================================== */
-.services-section {
-    padding: 4rem 2rem;
-    background-color: var(--white);
-}
-
-.services-header {
-    max-width: 1200px;
-    margin: 0 auto 3rem;
-    text-align: center;
-}
-
-.services-header h1 {
-    font-family: var(--font-poppins);
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: var(--black);
-}
-
-.services-header p {
-    font-family: var(--font-questrial);
-    font-size: 20px;
-    color: var(--dark-gray-2);
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.services-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
-}
-
-.service-card {
-    background-color: #f8f8f8;
-    border-radius: 12px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
-    overflow: hidden;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.service-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
-}
-
-.service-card-image img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.service-card-content {
-    padding: 2rem;
-}
-
-.service-card-content h3 {
-    font-family: var(--font-poppins);
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--primary-orange);
-    margin-bottom: 1rem;
-}
-
-.service-card-content p {
-    font-family: var(--font-questrial);
-    font-size: 18px;
-    color: var(--dark-gray-2);
-    line-height: 1.7;
-}
-
-/* Responsive para Servicios */
-@media (max-width: 968px) {
-    .services-container {
-        grid-template-columns: 1fr;
     }
 }
