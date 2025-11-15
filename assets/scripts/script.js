@@ -1,69 +1,78 @@
-//  Navbar
+// ===================================
+// NAVBAR LOADER & ACTIVE LINK
+// ===================================
 document.addEventListener('DOMContentLoaded', function() {
-    // Hamburger menu
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('navMenu');
     
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-        
-        // Close menu when clicking on a link
-        const navLinks = document.querySelectorAll('.nav-menu a');
-        navLinks.forEach(link => {
-            link.addEventListener('click', function() {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
-        });
-        
-        // Close menu when clicking outside
-        document.addEventListener('click', function(event) {
-            const isClickInsideNav = navMenu.contains(event.target);
-            const isClickOnHamburger = hamburger.contains(event.target);
-            
-            if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
+    // Cargar el Navbar
+    fetch('navbar.html')
+        .then(response => response.text())
+        .then(data => {
+            const navbarPlaceholder = document.getElementById('navbar-placeholder');
+            if (navbarPlaceholder) {
+                navbarPlaceholder.innerHTML = data;
             }
-        });
-    }
-    
-    // Active link highlighting
-    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const navLinks = document.querySelectorAll('.nav-menu a');
-    
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-        
-        // If href matches the current page
-        if (href === currentPage) {
-            link.classList.add('active');
-        } else if (href === 'index.html' && currentPage === '') {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-        
-        // Listener for anchors (like #news, #footer)
-        if (href.startsWith('#')) {
-            link.addEventListener('click', function() {
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
+
+            // --- Una vez cargado el navbar, ejecutamos su funcionalidad ---
+            
+            // Hamburger menu
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (hamburger) {
+                hamburger.addEventListener('click', function() {
+                    hamburger.classList.toggle('active');
+                    navMenu.classList.toggle('active');
+                });
+                
+                // Cerrar menú al hacer click en un enlace
+                const navLinks = document.querySelectorAll('.nav-menu a');
+                navLinks.forEach(link => {
+                    link.addEventListener('click', function() {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    });
+                });
+                
+                // Cerrar menú al hacer click fuera
+                document.addEventListener('click', function(event) {
+                    const isClickInsideNav = navMenu.contains(event.target);
+                    const isClickOnHamburger = hamburger.contains(event.target);
+                    
+                    if (!isClickInsideNav && !isClickOnHamburger && navMenu.classList.contains('active')) {
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Active link highlighting
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('.nav-menu a');
+            
+            navLinks.forEach(link => {
+                const href = link.getAttribute('href');
+                
+                if (href === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
             });
-        }
-    });
-    
-    // Detect scroll to activate "News" when the section is visible
+
+        })
+        .catch(error => {
+            console.error('Error cargando el navbar:', error);
+        });
+
+    // Detectar scroll para activar "Noticias" (si estamos en la página de noticias)
     const noticiasSection = document.querySelector('#noticias');
-    if (noticiasSection) {
+    if (noticiasSection && (window.location.pathname.includes('noticias.html') || window.location.pathname.includes('index.html'))) {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
+                    const navLinks = document.querySelectorAll('.nav-menu a');
                     navLinks.forEach(link => {
-                        if (link.getAttribute('href') === '#noticias') {
+                        if (link.getAttribute('href') === 'noticias.html') {
                             navLinks.forEach(l => l.classList.remove('active'));
                             link.classList.add('active');
                         }
@@ -76,35 +85,37 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Hero Carousel
+// ===================================
+// HERO CAROUSEL
+// ===================================
 const dots = document.querySelectorAll('.dot');
 const slides = document.querySelectorAll('.hero-slide');
 let currentSlide = 0;
 
 function showSlide(index) {
-    // Hide all slides
+    // Ocultar todos los slides
     slides.forEach(slide => {
         slide.classList.remove('active');
     });
     
-    // Remove active from all dots
+    // Quitar active de todos los dots
     dots.forEach(dot => {
         dot.classList.remove('active');
     });
     
-    // Show the current slide
+    // Mostrar el slide actual
     if (slides[index]) {
         slides[index].classList.add('active');
     }
     
-    // Activate the current dot
+    // Activar el dot actual
     if (dots[index]) {
         dots[index].classList.add('active');
     }
 }
 
 if (dots.length > 0 && slides.length > 0) {
-    // Click on dots
+    // Click en los dots
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             currentSlide = index;
@@ -119,9 +130,9 @@ if (dots.length > 0 && slides.length > 0) {
     }, 5000);
 }
 
-// =================================
+// ===================================
 // FORM VALIDATION - CONTACT FORM
-// =================================
+// ===================================
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
@@ -159,7 +170,9 @@ if (contactForm) {
     });
 }
 
-// Form Validation.
+// ===================================
+// FORM VALIDATION - REGISTRO
+// ===================================
 const registroForm = document.getElementById('registroForm');
 
 if (registroForm) {
@@ -296,7 +309,7 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observe elements for animation.
+// Observe elements for animation
 document.querySelectorAll('.about-card, .mission-card, .vision-card, .news-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';

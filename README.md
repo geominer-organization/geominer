@@ -9,7 +9,7 @@ Este proyecto es desarrollado para el curso de IHC y Tecnologías Móviles.
 * Del Aguila Olenka
 * Espinoza Angela
 * Mora Joel
-* Vergaray Rose
+* Vergaray Calderon
 * Villarreal Angel
 
 ## Segmentos Objetivo
