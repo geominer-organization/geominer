@@ -1,6 +1,4 @@
-// ===================================
-// NAVBAR FUNCTIONALITY
-// ===================================
+//  Navbar
 document.addEventListener('DOMContentLoaded', function() {
     // Hamburger menu
     const hamburger = document.getElementById('hamburger');
@@ -12,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             navMenu.classList.toggle('active');
         });
         
-        // Cerrar menú al hacer click en un enlace
+        // Close menu when clicking on a link
         const navLinks = document.querySelectorAll('.nav-menu a');
         navLinks.forEach(link => {
             link.addEventListener('click', function() {
@@ -21,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
-        // Cerrar menú al hacer click fuera
+        // Close menu when clicking outside
         document.addEventListener('click', function(event) {
             const isClickInsideNav = navMenu.contains(event.target);
             const isClickOnHamburger = hamburger.contains(event.target);
@@ -40,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
         
-        // Si el href coincide con la página actual
+        // If href matches the current page
         if (href === currentPage) {
             link.classList.add('active');
         } else if (href === 'index.html' && currentPage === '') {
@@ -49,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
             link.classList.remove('active');
         }
         
-        // Listener para anclas (como #noticias, #footer)
+        // Listener for anchors (like #news, #footer)
         if (href.startsWith('#')) {
             link.addEventListener('click', function() {
                 navLinks.forEach(l => l.classList.remove('active'));
@@ -58,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Detectar scroll para activar "Noticias" cuando se ve la sección
+    // Detect scroll to activate "News" when the section is visible
     const noticiasSection = document.querySelector('#noticias');
     if (noticiasSection) {
         const observer = new IntersectionObserver((entries) => {
@@ -78,37 +76,35 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// ===================================
-// HERO CAROUSEL
-// ===================================
+// Hero Carousel
 const dots = document.querySelectorAll('.dot');
 const slides = document.querySelectorAll('.hero-slide');
 let currentSlide = 0;
 
 function showSlide(index) {
-    // Ocultar todos los slides
+    // Hide all slides
     slides.forEach(slide => {
         slide.classList.remove('active');
     });
     
-    // Quitar active de todos los dots
+    // Remove active from all dots
     dots.forEach(dot => {
         dot.classList.remove('active');
     });
     
-    // Mostrar el slide actual
+    // Show the current slide
     if (slides[index]) {
         slides[index].classList.add('active');
     }
     
-    // Activar el dot actual
+    // Activate the current dot
     if (dots[index]) {
         dots[index].classList.add('active');
     }
 }
 
 if (dots.length > 0 && slides.length > 0) {
-    // Click en los dots
+    // Click on dots
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             currentSlide = index;
@@ -123,9 +119,9 @@ if (dots.length > 0 && slides.length > 0) {
     }, 5000);
 }
 
-// ===================================
+// =================================
 // FORM VALIDATION - CONTACT FORM
-// ===================================
+// =================================
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
@@ -163,9 +159,7 @@ if (contactForm) {
     });
 }
 
-// ===================================
-// FORM VALIDATION - REGISTRO
-// ===================================
+// Form Validation.
 const registroForm = document.getElementById('registroForm');
 
 if (registroForm) {
@@ -302,7 +296,7 @@ const observer = new IntersectionObserver(function(entries) {
     });
 }, observerOptions);
 
-// Observe elements for animation
+// Observe elements for animation.
 document.querySelectorAll('.about-card, .mission-card, .vision-card, .news-item').forEach(el => {
     el.style.opacity = '0';
     el.style.transform = 'translateY(20px)';
