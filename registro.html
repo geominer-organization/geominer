@@ -10,19 +10,16 @@
 </head>
 <body class="auth-page">
     <div class="auth-container">
-        <!-- Left Side - Image -->
         <div class="auth-image">
             <img src="/geominer/assets/images/minero_casco.jpg" alt="Mineros en túnel">
         </div>
 
-        <!-- Right Side - Form -->
         <div class="auth-form-container">
-            <!-- Botón de retroceso -->
             <a href="index.html" class="back-button" title="Volver a inicio">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
-                Volver
+                <span data-i18n="auth_back">Volver</span>
             </a>
             
             <div class="auth-logo">
@@ -31,62 +28,65 @@
             </div>
 
             <div class="auth-form">
-                <h2>Simplificando procesos mineros, mejorando tecnologias</h2>
+                <h2 data-i18n="auth_register_title">Simplificando procesos mineros, mejorando tecnologias</h2>
 
                 <form id="registroForm">
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="nombres">Nombres</label>
-                            <input type="text" id="nombres" name="nombres" placeholder="Ingrese sus nombres" required>
+                            <label for="nombres" data-i18n="auth_names">Nombres</label>
+                            <input type="text" id="nombres" name="nombres" data-i18n="ph_names" placeholder="Ingrese sus nombres" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="apellidos">Apellidos</label>
-                            <input type="text" id="apellidos" name="apellidos" placeholder="Ingrese sus apellidos" required>
+                            <label for="apellidos" data-i18n="auth_lastnames">Apellidos</label>
+                            <input type="text" id="apellidos" name="apellidos" data-i18n="ph_lastnames" placeholder="Ingrese sus apellidos" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="rut">Rol</label>
-                            <input type="text" id="rut" name="rut" placeholder="Ingrese su rol" required>
+                            <label for="rut" data-i18n="auth_role">Rol</label>
+                            <input type="text" id="rut" name="rut" data-i18n="ph_role" placeholder="Ingrese su rol" required>
                         </div>
 
                         <div class="form-group">
-                            <label for="telefono">Teléfono</label>
-                            <input type="tel" id="telefono" name="telefono" placeholder="Ingrese su teléfono" required>
+                            <label for="telefono" data-i18n="auth_phone">Teléfono</label>
+                            <input type="tel" id="telefono" name="telefono" data-i18n="ph_phone" placeholder="Ingrese su teléfono" required>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="segmento">Segmento</label>
+                        <label for="segmento" data-i18n="auth_segment">Segmento</label>
                         <select id="segmento" name="segmento" required>
-                            <option value="">Seleccione un segmento</option>
-                            <option value="minera">Empresa Minera</option>
-                            <option value="consultora">Consultora</option>
-                            <option value="independiente">Independiente</option>
+                            <option value="" data-i18n="opt_segment_def">Seleccione un segmento</option>
+                            <option value="minera" data-i18n="opt_segment_mine">Empresa Minera</option>
+                            <option value="consultora" data-i18n="opt_segment_consult">Consultora</option>
+                            <option value="independiente" data-i18n="opt_segment_indep">Independiente</option>
                         </select>
                     </div>
 
                     <div class="form-group">
-                        <label for="empresa">Empresa</label>
-                        <input type="text" id="empresa" name="empresa" placeholder="Ingrese el nombre de su empresa" required>
+                        <label for="empresa" data-i18n="auth_company">Empresa</label>
+                        <input type="text" id="empresa" name="empresa" data-i18n="ph_company" placeholder="Ingrese el nombre de su empresa" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="correo">Correo Institucional</label>
-                        <input type="email" id="correo" name="correo" placeholder="Ingrese su correo institucional" required>
+                        <label for="correo" data-i18n="auth_inst_email">Correo Institucional</label>
+                        <input type="email" id="correo" name="correo" data-i18n="ph_inst_email" placeholder="Ingrese su correo institucional" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="contrasena">Contraseña</label>
-                        <input type="password" id="contrasena" name="contrasena" placeholder="Ingrese su contraseña" required>
+                        <label for="contrasena" data-i18n="auth_pass">Contraseña</label>
+                        <input type="password" id="contrasena" name="contrasena" data-i18n="ph_pass" placeholder="Ingrese su contraseña" required>
                     </div>
 
-                    <button type="submit" class="auth-submit-btn">Registrarse</button>
+                    <button type="submit" class="auth-submit-btn" data-i18n="auth_register_btn">Registrarse</button>
                 </form>
 
-                <p class="auth-footer-text">¿Ya tienes una cuenta? <a href="login.html">Inicia Sesión</a></p>
+                <p class="auth-footer-text">
+                    <span data-i18n="auth_have_account">¿Ya tienes una cuenta?</span> 
+                    <a href="login.html" data-i18n="nav_login">Inicia Sesión</a>
+                </p>
             </div>
         </div>
     </div>

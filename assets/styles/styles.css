@@ -1376,3 +1376,46 @@ main {
         grid-template-columns: 1fr;
     }
 }
+
+/* ... resto de tu CSS ... */
+
+/* ESTILOS DEL BOTÓN DE IDIOMA (GLOBO) */
+.lang-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+    color: var(--white); /* El icono hereda este color */
+}
+
+.lang-btn svg {
+    width: 24px;
+    height: 24px;
+    stroke: var(--white);
+    transition: stroke 0.3s ease;
+}
+
+.lang-btn:hover {
+    transform: scale(1.1); /* Efecto zoom suave */
+}
+
+.lang-btn:hover svg {
+    stroke: var(--black); /* Cambia a negro al hacer hover (igual que los enlaces) */
+}
+
+/* Ajuste para móvil: alinear el icono a la izquierda */
+@media (max-width: 640px) {
+    .lang-btn {
+        width: 100%;
+        justify-content: flex-start;
+        padding: 0.5rem 0;
+    }
+    .lang-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+}

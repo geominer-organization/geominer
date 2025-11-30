@@ -12,13 +12,22 @@
         </button>
         
         <ul class="nav-menu" id="navMenu">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="nosotros.html">Nosotros</a></li>
-            <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="noticias.html">Noticias</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="login.html">Iniciar Sesión</a></li>
+            <li><a href="index.html" data-i18n="nav_home">Inicio</a></li>
+            <li><a href="nosotros.html" data-i18n="nav_about">Nosotros</a></li>
+            <li><a href="servicios.html" data-i18n="nav_services">Servicios</a></li>
+            <li><a href="noticias.html" data-i18n="nav_news">Noticias</a></li>
+            <li><a href="contacto.html" data-i18n="nav_contact">Contacto</a></li>
+            <li><a href="login.html" data-i18n="nav_login">Iniciar Sesión</a></li>
+            
+            <li>
+                <button id="langToggle" class="lang-btn" aria-label="Cambiar idioma" title="Cambiar idioma / Change language">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <line x1="2" y1="12" x2="22" y2="12"></line>
+                        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                    </svg>
+                </button>
+            </li>
         </ul>
-        
     </div>
 </nav>

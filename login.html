@@ -10,18 +10,16 @@
 </head>
 <body class="auth-page">
     <div class="auth-container">
-        <!-- Left Side - Image -->
         <div class="auth-image">
             <img src="/geominer/assets/images/mineros_en_mina.png" alt="Mineros en túnel">
         </div>
 
         <div class="auth-form-container">
-            <!-- Botón de retroceso -->
             <a href="index.html" class="back-button" title="Volver a inicio">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M19 12H5M12 19l-7-7 7-7"/>
                 </svg>
-                Volver
+                <span data-i18n="auth_back">Volver</span>
             </a>
             
             <div class="auth-logo">
@@ -30,18 +28,18 @@
             </div>
 
             <div class="auth-form">
-                <h2>Que bueno verte de nuevo</h2>
+                <h2 data-i18n="auth_welcome_back">Que bueno verte de nuevo</h2>
 
                 <form id="loginForm">
                     <div class="form-group">
-                        <label for="correo">Correo Electrónico</label>
-                        <input type="email" id="correo" name="correo" placeholder="Ingresa tu correo electrónico" required>
+                        <label for="correo" data-i18n="auth_email">Correo Electrónico</label>
+                        <input type="email" id="correo" name="correo" data-i18n="ph_email" placeholder="Ingresa tu correo electrónico" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="contrasena">Contraseña</label>
+                        <label for="contrasena" data-i18n="auth_pass">Contraseña</label>
                         <div class="password-input">
-                            <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña" required>
+                            <input type="password" id="contrasena" name="contrasena" data-i18n="ph_pass" placeholder="Ingresa tu contraseña" required>
                             <button type="button" class="toggle-password" aria-label="Mostrar contraseña">
                                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
                                     <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
@@ -54,14 +52,17 @@
                     <div class="form-options">
                         <label class="checkbox-label">
                             <input type="checkbox" name="recordar">
-                            <span>Recuérdame</span>
+                            <span data-i18n="auth_remember">Recuérdame</span>
                         </label>
                     </div>
 
-                    <button type="submit" class="auth-submit-btn">Ingresar</button>
+                    <button type="submit" class="auth-submit-btn" data-i18n="auth_enter">Ingresar</button>
                 </form>
 
-                <p class="auth-footer-text">¿No tienes una cuenta? <a href="registro.html">Crea tu cuenta</a></p>
+                <p class="auth-footer-text">
+                    <span data-i18n="auth_no_account">¿No tienes una cuenta?</span> 
+                    <a href="registro.html" data-i18n="auth_create">Crea tu cuenta</a>
+                </p>
             </div>
         </div>
     </div>
