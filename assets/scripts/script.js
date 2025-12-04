@@ -20,6 +20,12 @@ const translations = {
         hero_title_3: "Tecnología geológica para una minería sostenible",
         hero_desc_3: "Centralice, interprete y gestione datos para reducir costos y minimizar impactos ambientales.",
 
+        // --- NUEVAS TRADUCCIONES AGREGADAS PARA EL SLIDE 4 ---
+        hero_title_4: "Nuestro Equipo",
+        hero_desc_4: "Conozca a los profesionales detrás de la innovación geológica en GeoMiner.",
+        hero_cta_team: "Conócenos",
+        // -----------------------------------------------------
+
         // Footer
         footer_rights: "Copyright © UPC-PE 2025 | Diseñado por equipo GEO-PE",
 
@@ -30,6 +36,8 @@ const translations = {
         mission_desc: "Potenciar las actividades de exploración y explotación en la industria minera mediante el desarrollo de soluciones tecnológicas innovadoras que optimicen la gestión de la información geoespacial y ambiental, permitiendo decisiones estratégicas con mayor agilidad y precisión.",
         vision_title: "Visión",
         vision_desc: "Convertirnos en una empresa líder tecnológica que contribuye a la exploración minera responsable y eficiente, facilitando decisiones informadas y sostenibles para los proyectos mineros a nivel global, así como optimizar la industria minera mediante soluciones innovadoras.",
+        
+        
 
         // Servicios
         serv_title: "Nuestros Servicios",
@@ -114,6 +122,11 @@ const translations = {
         hero_desc_2: "Discover how our platform transforms geological data into key strategic decisions.",
         hero_title_3: "Geological technology for sustainable mining",
         hero_desc_3: "Centralize, interpret, and manage data to reduce costs and minimize environmental impacts.",
+        // --- NUEVAS TRADUCCIONES AGREGADAS PARA EL SLIDE 4 ---
+        hero_title_4: "Our Team",
+        hero_desc_4: "Meet the professionals behind the geological innovation at GeoMiner.",
+        hero_cta_team: "Meet Us",
+        // -----------------------------------------------------
 
         // Footer
         footer_rights: "Copyright © UPC-PE 2025 | Designed by GEO-PE team",
@@ -335,7 +348,9 @@ document.addEventListener('DOMContentLoaded', function() {
 // ===================================
 const dots = document.querySelectorAll('.dot');
 const slides = document.querySelectorAll('.hero-slide');
+const heroSection = document.querySelector('.hero'); // Seleccionamos el contenedor principal
 let currentSlide = 0;
+let slideInterval; // Variable para guardar el intervalo
 
 function showSlide(index) {
     slides.forEach(slide => {
@@ -355,7 +370,23 @@ function showSlide(index) {
     }
 }
 
+// Función para iniciar el auto-play
+function startSlideShow() {
+    slideInterval = setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+    }, 5000);
+}
+
+// Función para detener el auto-play
+function stopSlideShow() {
+    clearInterval(slideInterval);
+}
+
+// Configuración inicial
 if (dots.length > 0 && slides.length > 0) {
+    
+    // Eventos Click en los puntos
     dots.forEach((dot, index) => {
         dot.addEventListener('click', () => {
             currentSlide = index;
@@ -363,46 +394,15 @@ if (dots.length > 0 && slides.length > 0) {
         });
     });
 
-    setInterval(() => {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }, 5000);
-}
+    // Iniciar el carrusel automáticamente al cargar
+    startSlideShow();
 
-// ===================================
-// FORM VALIDATION - CONTACT FORM
-// ===================================
-const contactForm = document.getElementById('contactForm');
-
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        const nombre = document.getElementById('nombre').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const telefono = document.getElementById('telefono').value.trim();
-        const mensaje = document.getElementById('mensaje').value.trim();
-        
-        if (!nombre || !email || !telefono || !mensaje) {
-            alert('Por favor, completa todos los campos.');
-            return;
-        }
-        
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(email)) {
-            alert('Por favor, ingresa un correo electrónico válido.');
-            return;
-        }
-        
-        const phoneRegex = /^[+]?[\d\s-()]+$/;
-        if (!phoneRegex.test(telefono)) {
-            alert('Por favor, ingresa un número de teléfono válido.');
-            return;
-        }
-        
-        alert('¡Gracias por contactarnos! Nos pondremos en contacto contigo pronto.');
-        contactForm.reset();
-    });
+    // LÓGICA PARA DETENER EL SCROLL SI SE VA A VER UN VIDEO
+    // Si el usuario pone el mouse sobre el hero (para dar click al video), paramos el slider.
+    if (heroSection) {
+        heroSection.addEventListener('mouseenter', stopSlideShow);
+        heroSection.addEventListener('mouseleave', startSlideShow);
+    }
 }
 
 // ===================================
